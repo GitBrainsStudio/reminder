@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { HomePageRoutingModule } from './home-page-routing.module';
-import { ReminderModule } from 'src/app/features/reminder/reminder.module';
+import { ReminderModule } from '../../features/reminder/reminder.module';
 
 @NgModule({
   declarations: [

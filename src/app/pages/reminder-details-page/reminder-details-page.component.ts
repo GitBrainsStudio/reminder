@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReplaySubject, takeUntil } from 'rxjs';
-import { Reminder } from 'src/app/features/reminder/models/reminder.model';
-import { ReminderService } from 'src/app/features/reminder/services/reminder.service';
+import { Reminder } from '../../features/reminder/models/reminder.model';
+import { ReminderService } from '../../features/reminder/services/reminder.service';
 
 @Component({
   selector: 'app-reminder-details-page',
