@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { interval, ReplaySubject, switchMap, takeUntil, tap } from 'rxjs';
-import { matTableRowAnimation } from 'src/app/features/meterial/animations/mat-table-row.animation';
-import { Reminder } from '../../models/reminder.model';
-import { ReminderService } from '../../services/reminder.service';
+import { matTableRowAnimation } from 'src/app/features/material/animations/mat-table-row.animation';
+import { Reminder } from 'src/app/features/reminder/models/reminder.model';
+import { ReminderService } from 'src/app/features/reminder/services/reminder.service';
 
 @Component({
   selector: 'app-reminder-collection',

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Reminder } from '../../models/reminder.model';;
+import { Reminder } from 'src/app/features/reminder/models/reminder.model';;
 
 @Component({
   selector: 'app-reminder-viewer',

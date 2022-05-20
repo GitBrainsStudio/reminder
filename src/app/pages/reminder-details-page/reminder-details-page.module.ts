@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReminderDetailsPageComponent } from './reminder-details-page.component';
 import { ReminderDetailsPageRoutingModule } from './reminder-details-page-routing.module';
 import { ReminderModule } from 'src/app/features/reminder/reminder.module';
-import { MaterialModule } from 'src/app/features/meterial/material.module';
-
-
+import { MaterialModule } from 'src/app/features/material/material.module';
 
 @NgModule({
   declarations: [
