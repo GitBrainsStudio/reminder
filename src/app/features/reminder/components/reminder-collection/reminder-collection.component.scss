@@ -1,0 +1,88 @@
+.reminder-collection__row
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.reminder-collection__row--flex-end
+{
+    justify-content: flex-end;
+}
+
+.reminder-collection__row-item:not(:last-child)
+{
+    margin-right: 20px;
+}
+
+.reminder-collection__overdue-count
+{
+    color: var(--red-50);
+    font-weight: 600;
+}
+
+.reminder-collection__executed-count
+{
+    color: var(--green);
+    font-weight: 600;
+}
+
+.reminder-collection__card
+{
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--white);
+}
+
+.reminder-collection__table-wrapper
+{
+    height: 400px;
+    overflow: auto;
+}
+
+.reminder-collection__table
+{
+    width: 100%;
+}
+
+.reminder-collection__table-row
+{
+    transition: background-color .4s ease, opacity .4s ease;
+}
+
+.reminder-collection__table-row:hover
+{
+    cursor: pointer;
+    opacity: .8;
+}
+
+.reminder-collection__table-row--overdue
+{
+    background-color: var(--red-50);
+
+    .mat-cell
+    {
+        color: var(--white);
+    }
+}
+
+.reminder-collection__table-row--execute
+{
+    background-color: var(--green);
+
+    .mat-cell
+    {
+        color: var(--white);
+    }
+}
+
+.separator
+{
+    flex-grow: 1;
+}
+
+.email
+{
+    font-size: 12px;
+    opacity: 0.8;
+}

@@ -1,0 +1,12 @@
+<div class="container reminder-details-page">
+
+    <section class="mat-typography section reminder-details-page-section">
+        <div class="section__row reminder-details-page-section__row">
+            <a href="" [routerLink]="['/']" class="reminder-details-page__backspace">
+                <mat-icon>keyboard_backspace</mat-icon>
+            </a>
+            <h1 class="reminder-details-page-section__title">Подробная информация</h1>
+        </div>
+        <app-reminder-viewer [reminder]="reminder" *ngIf="reminder"></app-reminder-viewer>
+    </section>
+</div>

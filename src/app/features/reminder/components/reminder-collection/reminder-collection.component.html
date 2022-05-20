@@ -1,0 +1,49 @@
+<div class="reminder-collection elevation-z4" *ngIf="reminderService.reminders; else skeleton;">
+    <div class="reminder-collection__card">
+        <div class="reminder-collection__table-wrapper" #remindersMatTableWrapper>
+            <table mat-table [dataSource]="reminderService.reminders" class="reminder-collection__table">
+    
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef> Статус </th>
+                  <td mat-cell *matCellDef="let reminder"> {{ reminder.Status.Name }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="shortDescription">
+                    <th mat-header-cell *matHeaderCellDef> Краткое описание </th>
+                    <td mat-cell *matCellDef="let reminder"> {{ reminder.ShortDescription }} </td>
+                  </ng-container>
+        
+                <ng-container matColumnDef="createdAt">
+                    <th mat-header-cell *matHeaderCellDef> Дата создания </th>
+                    <td mat-cell *matCellDef="let reminder"> {{ reminder.CreatedAt | date : 'HH:mm:ss'}} </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="executedAt">
+                    <th mat-header-cell *matHeaderCellDef> Дата выполнения </th>
+                    <td mat-cell *matCellDef="let reminder"> {{ reminder.ExecutedAt | date : 'HH:mm:ss' }} </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="remindersMatTableColumns"></tr>
+                <tr mat-row *matRowDef="let reminder; columns: remindersMatTableColumns;" 
+                    @matTableRowAnimation 
+                    class="reminder-collection__table-row"
+                    [ngClass]="
+                    { 
+                        'reminder-collection__table-row--overdue' : reminder.isOverdue, 
+                        'reminder-collection__table-row--execute' : reminder.isExecuted 
+                    }"
+                    [routerLink]="[reminder.Id]"></tr>
+            </table>
+        </div>
+    </div>
+    <div class="reminder-collection__row">
+        <span class="email separator">gitbrains@gmail.com</span>
+        <div class="reminder-collection__row-item">Всего: {{ reminderService.reminders.length }}</div>
+        <div class="reminder-collection__row-item">Просрочено: <span [ngClass]="{ 'reminder-collection__overdue-count' : reminderService.overdueRemindersCount > 0 }">{{  reminderService.overdueRemindersCount }}</span></div>
+        <div class="reminder-collection__row-item">Исполнено: <span [ngClass]="{ 'reminder-collection__executed-count' : reminderService.executedRemindersCount > 0 }">{{  reminderService.executedRemindersCount }}</span></div>
+    </div>
+</div>
+
+<ng-template #skeleton>
+    reminder-collection loading...
+</ng-template>

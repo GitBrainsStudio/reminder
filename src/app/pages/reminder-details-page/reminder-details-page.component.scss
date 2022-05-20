@@ -1,0 +1,18 @@
+.reminder-details-page-section__row
+{
+    align-items: center;
+}
+
+.reminder-details-page__backspace
+{
+    margin-bottom: 14px;
+    margin-right: 5px;
+
+    color: var(--black);
+    transition: color .2s ease;
+}
+
+.reminder-details-page__backspace:hover
+{
+    color: var(--orange);
+}

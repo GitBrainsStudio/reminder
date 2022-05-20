@@ -1,0 +1,44 @@
+<div class="reminder-viewer" *ngIf="reminder">
+    <form [formGroup]="reminderForm">
+        <div class="reminder-viewer__row">
+            <mat-form-field appearance="outline" class="reminder-viewer__mat-form-filed">
+                <mat-label>
+                    Дата и время создания
+                </mat-label>
+                <input matInput formControlName="CreatedAt" readonly>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="reminder-viewer__mat-form-filed">
+                <mat-label>
+                    Дата и время выполнения
+                </mat-label>
+                <input matInput formControlName="ExecutedAt" readonly>
+            </mat-form-field>
+        </div>
+        <div class="reminder-viewer__row">
+            <mat-form-field appearance="outline" class="reminder-viewer__mat-form-filed">
+                <mat-label>
+                    Краткое описание
+                </mat-label>
+                <textarea matInput 
+                formControlName="ShortDescription"
+                cdkTextareaAutosize
+                cdkAutosizeMaxRows="2"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="reminder-viewer__row">
+            <mat-form-field appearance="outline" class="reminder-viewer__mat-form-filed">
+                <mat-label>
+                    Полное описание
+                </mat-label>
+                <textarea matInput 
+                formControlName="FullDescription"
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="3"
+                cdkAutosizeMaxRows="5"></textarea>
+            </mat-form-field>
+        </div>
+        <div class="reminder-viewer__row reminder-viewer__row--flex-end">
+            <button mat-raised-button color="primary" type="button" class="reminder-viwer__mat-execute-button" (click)="execute()" [disabled]="reminder.isExecuted">Выполнить</button>
+        </div>
+    </form>
+</div>

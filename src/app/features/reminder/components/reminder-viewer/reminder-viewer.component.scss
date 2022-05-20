@@ -1,0 +1,28 @@
+.reminder-viewer
+{
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.reminder-viewer__mat-form-filed
+{
+    width: 100%;
+}
+
+.reminder-viewer__row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.reminder-viewer__row--flex-end
+{
+    justify-content: flex-end;
+}
+
+.reminder-viwer__mat-execute-button
+{
+    background-color: green;
+}
